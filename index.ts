@@ -1,10 +1,9 @@
 "use strict";
 import { sumChars } from "./sumChars";
-const serverless = require("serverless-http");
+import dotenv from "dotenv";
 const express = require("express");
 const server = express();
-import dotenv from "dotenv";
-const request = require("supertest");
+
 server.use(express.json());
 dotenv.config();
 
@@ -29,5 +28,3 @@ const PORT = process.env.PORT || 4001;
 server.listen(PORT, () => {
   console.log("listening to port", PORT);
 });
-
-module.exports.handler = serverless(server);
