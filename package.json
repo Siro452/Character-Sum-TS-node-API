@@ -12,7 +12,7 @@
   "description": "��#\u0000 \u0000M\u00004\u0000\r\u0000 \u0000",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
