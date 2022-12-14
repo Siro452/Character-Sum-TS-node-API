@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const sumChars_1 = __importDefault(require("./sumChars"));
+const sumChars_1 = require("./sumChars");
 const serverless = require("serverless-http");
 const express = require("express");
 const server = express();
@@ -16,7 +16,7 @@ function carValue(req, res) {
     let year;
     let carValue;
     ({ carModel, year } = req.body);
-    carValue = (0, sumChars_1.default)(carModel, year);
+    carValue = (0, sumChars_1.sumChars)(carModel, year);
     res.json(carValue);
     console.log(res.json(carValue));
 }

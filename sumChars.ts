@@ -1,5 +1,5 @@
 //console log parameters for function
-export default function sumChars(carModel: string, carYear: number) {
+export function sumChars(carModel: string, carYear: any) {
   // filter carmodel to only get letters
   let myNumber = carModel.replace(/[0-9\s]/g, "");
   //loops through every letter and assigns each letter with a number

@@ -4,7 +4,6 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
-    "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "tsconfig": "^7.0.0",
     "typescript": "^4.9.4"
@@ -13,11 +12,27 @@
   "description": "��#\u0000 \u0000M\u00004\u0000\r\u0000 \u0000",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc",
     "start": "nodemon index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
+    "@jest/globals": "^29.3.1",
+    "ts-jest": "^29.0.3"
+  }
 }

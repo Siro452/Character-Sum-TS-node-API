@@ -1,5 +1,5 @@
 "use strict";
-import sumChars from "./sumChars";
+import { sumChars } from "./sumChars";
 const serverless = require("serverless-http");
 const express = require("express");
 const server = express();
