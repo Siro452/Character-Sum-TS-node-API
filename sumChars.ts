@@ -1,5 +1,5 @@
 //console log parameters for function
-export function sumChars(carModel: string, carYear: any) {
+export function sumChars(carModel: string, carYear: string | number) {
   // filter carmodel to only get letters
   let myNumber = carModel.replace(/[0-9\s]/g, "");
   //loops through every letter and assigns each letter with a number
@@ -12,13 +12,18 @@ export function sumChars(carModel: string, carYear: any) {
   }
   //add total of the loop with the second param of year
   let totalSum = acc * 100 + Number(carYear);
-
+  console.log(totalSum);
   if (totalSum < 0) {
-    return "number cannot be a negative";
+    return {
+      error: "number cannot be a negative",
+    };
   } else if (isNaN(totalSum)) {
-    return "invalid character";
-  } else return "$" + totalSum;
+    return {
+      error: "invalid character",
+    };
+  } else return { carvalue: "$" + totalSum };
 }
 
 console.log(sumChars("civic", 3014));
 console.log(sumChars("911", 2932));
+console.log(sumChars("a", -978));

@@ -13,7 +13,7 @@ function carValue(
 ) {
   let carModel: string;
   let year: number;
-  let carValue: number | string;
+  let carValue: any;
   ({ carModel, year } = req.body);
 
   carValue = sumChars(carModel, year);
